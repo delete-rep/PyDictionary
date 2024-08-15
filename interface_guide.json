@@ -1,0 +1,26 @@
+{
+    "SUGGESTIONS": {
+        "add" : "function: [grey]ADD[grey] \n this is a function used to add other note types",
+        
+        "delete ": "used to delete other notes and take a variety of notes",
+        
+        "dictionary" : "find items in the dicionary",
+        
+        "find": "[#363838] [code]FIND[/code] a function which return a words meaning if found \n Parameters : a [blue]single-word[/blue][/#363838]"
+        
+        },
+
+    "HELP":{
+            "help":"",
+            "delete":"",
+            "config":"",
+            "find":""
+    },
+    
+    "ERRORS":{
+        "00":"",
+        "93":""
+    }
+
+    
+}
