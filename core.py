@@ -97,7 +97,7 @@ class Core():
         self.table =  Table(expand=True,show_edge=False)
         self.table.add_column()
         
-        for key,value in self.lexicon.items():
+        for key,value in self.LEXICON.items():
             if key.startswith(last_word):     
                 if count < self.max_displayed_similar_words:
                     self.table.add_row(f"{key}")
@@ -123,7 +123,7 @@ class Core():
         if  not self.contains_primary_key():
             matching_words = [word for word in self.PRIMARY_KEY_WORD_MAPPING if word.startswith(self.split_entry_text[-1])]
             if len(matching_words) > 0:
-                for key,value in self.suggestions.items():
+                for key,value in self.SUGGESTIONS.items():
                     if matching_words[0] == key :
                         self.suggestion = value
 
@@ -154,15 +154,15 @@ class Core():
         self.table.add_column()
             
         if last_word == "" and len(self.split_entry_text) > 1: 
-            last_wordword =self.split_entry_text[-2]
-        for key,value in self.lexicon.items():
-            if key.lower() == last_wordword.lower():
+            last_word=self.split_entry_text[-2]
+        for key,value in self.LEXICON.items():
+            if key.lower() == last_word.lower():
                     found = True
                     self.table.add_row(f"{key.upper()}")
                     value = value.replace(";","\n")         
                     self.table.add_row(f"{value}")
         
-        if found == False: self.table.add_row(f"[grey] [green]{last_wordword}[/green] not found  \n [i] Word maybe existing but not present in the database[/i][/grey]")
+        if found == False: self.table.add_row(f"[grey] [green]{last_word}[/green] not found  \n [i] Word maybe existing but not present in the database[/i][/grey]")
         self.layout["view"].update(Padding(self.table,pad =(0,20),expand=True))     
 
     def dictionary():
